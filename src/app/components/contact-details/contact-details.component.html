@@ -1,0 +1,23 @@
+<div class="container">
+  <div [@animateDetail] class="card mx-auto mt-3" *ngIf="contact">
+    <div class="row">
+      <!-- Image -->
+      <div class="col-4 ml-3 my-auto">
+        <img class="card-img-top p-3" *ngIf="contact?.gender=='male'" src="https://cdn4.iconfinder.com/data/icons/rcons-user/32/boss_man-512.png" alt="gender">
+        <img class="card-img-top p-3" *ngIf="contact?.gender=='female'" src="https://cdn3.iconfinder.com/data/icons/rcons-user-action/32/girl-512.png" alt="gender">
+      </div>
+      <!-- Details -->
+      <div class="col-5">
+        <div class="card-body">
+          <h5 class="card-title">{{contact.name}} {{contact.surname}}</h5>
+          <p class="card-text">Age: {{contact.age}}</p>
+          <p class="card-text">Birthdate: {{contact.birthdate}}</p>
+          <p class="card-text" *ngIf="contact.gender">Gender: {{contact.gender | ucwords }}</p>
+          <p class="card-text" *ngIf="contact.type">Type: {{contact.type | ucwords}}</p>
+          <p class="card-text" *ngIf="contact.phone">Phone number: {{contact.phone}}</p>
+          <a routerLink="../" class="btn btn-primary">Go back</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

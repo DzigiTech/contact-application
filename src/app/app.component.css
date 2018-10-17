@@ -1,0 +1,19 @@
+.active-link {
+  color: #fff;
+  background-color: #007bff;
+  border-radius: .25rem;
+}
+.row {
+  position: relative;
+}
+.col-10 {
+  margin-left: 220px;
+}
+.col-sm-2 {
+  position: fixed;
+  margin: 15px auto;
+}
+p {
+    font-family: 'EB Garamond', serif;
+    font-size: 26px;
+}

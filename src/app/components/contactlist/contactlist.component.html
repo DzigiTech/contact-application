@@ -1,0 +1,39 @@
+<div class="container mt-3">
+  <div class="row justify-content-center">
+    <!-- Search bar-->
+    <div class="col-4">
+      <input class="form-control" type="text" #find (keyup) = "search(find.value)">
+      <label for="search">Search contacts</label>
+    </div>
+  </div>
+  <!-- Table-->
+  <div [@animateTable] class="card p-1 table-responsive">
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th class="table-primary" scope="col">Id<i class="fas fa-sort ml-3" (click) = "orderList('id')"></i></th>
+        <th class="table-primary" scope="col">Name<i class="fas fa-sort ml-3" (click) = "orderList('name')"></i></th>
+        <th class="table-primary" scope="col">Surname<i class="fas fa-sort ml-3" (click) = "orderList('surname')"></i></th>
+        <th class="table-primary" scope="col">Age<i class="fas fa-sort ml-3" (click) = "orderList('age')"></i></th>
+        <th class="table-primary" scope="col">Birthdate</th>
+        <th class="table-primary" scope="col">View</th>
+        <th class="table-primary" scope="col">Edit</th>
+        <th class="table-primary" scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let contact of contacts | filterBy: ['name', 'surname', 'age']: searchText | orderBy: orderParam ">
+        <td>{{contact.id}}</td>
+        <td>{{contact.name}}</td>
+        <td>{{contact.surname}}</td>
+        <td>{{contact.age}}</td>
+        <td>{{contact.birthdate}}</td>
+        <td><button class="btn btn-info" type="button" (click)="view(contact.id)">View</button></td>
+        <td><button class="btn btn-warning" type="button" (click)="edit(contact.id)">Edit</button></td>
+        <td><button class="btn btn-danger" type="button" (click)="delete(contact.id)">Delete</button></td>
+      </tr>
+    </tbody>
+    </table>
+  </div>
+
+</div>

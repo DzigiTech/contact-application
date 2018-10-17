@@ -1,0 +1,14 @@
+db.contacts.insert([
+{"id" : 1, "name" : "Petar", "surname" : "Petrovic", "age" : 20, "birthdate":"18/06/1998", "gender":"male", "phone":"0699876543", "type":"business"},
+{"id" : 2, "name" : "Janko", "surname" : "Jankovic", "age" : 17, "birthdate":"20/04/2001", "gender":"male", "phone":"0648846544", "type":"private"},
+{"id" : 3, "name" : "Marko", "surname" :  "Markovic", "age" : 26, "birthdate":"05/12/1992"},
+{"id" : 4, "name" : "Mirka", "surname" :  "Mirkovic", "age" : 19, "birthdate":"25/06/1999", "gender":"female", "phone":"061324567", "type":"business"},
+{"id" : 5, "name" : "Jovana", "surname" :  "Jovanovic", "age" : 28, "birthdate":"10/12/1990", "gender":"female", "phone":"062234569", "type":"business"},
+{"id" : 6, "name" : "Dejan", "surname" :  "Dejanovic", "age" : 21, "birthdate":"01/07/1997"},
+{"id" : 7, "name" : "Mirka", "surname" :  "Petrovic", "age" : 20, "birthdate":"18/06/1998"},
+{"id" : 8, "name" : "Jovana", "surname" :  "Dejanovic", "age" : 17, "birthdate":"20/04/2001", "gender":"female", "phone":"0647879781", "type":"private"},
+{"id" : 9, "name" : "Dejan", "surname" :  "Mirkovic", "age" : 26, "birthdate":"05/12/1992"},
+{"id" : 10, "name" : "Marko", "surname" :  "Jankovic", "age" : 19, "birthdate":"25/06/1999"},
+{"id" : 11, "name" : "Petar", "surname" :  "Markovic", "age" : 28, "birthdate":"10/12/1990", "gender":"male", "phone":"061235686", "type":"private"},
+{"id" : 12, "name" : "Janko", "surname" :  "Jovanovic", "age" : 21, "birthdate":"01/07/1997"}
+])

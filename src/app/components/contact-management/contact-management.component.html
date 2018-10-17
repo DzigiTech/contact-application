@@ -1,0 +1,91 @@
+<div [@animateCard] class="card text-white bg-success mt-3 mx-auto">
+  <div class="card-body">
+    <h5 class="card-title text-center">Contact details</h5>
+    <div class="container mt-2">
+      <div class="row justify-content-center">
+        <div class="col-9 table-responsive">
+          <!-- Contact form -->
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit(name.value, surname.value, gender.value, phone.value, age.value, birthdate.value, type.value)">
+
+            <table class="table">
+              <tr>
+                <td>Name:</td>
+                <td><input type="text" formControlName="name" #name></td>
+              </tr>
+              <tr>
+                <td>Surname:</td>
+                <td><input type="text" formControlName="surname" #surname></td>
+              </tr>
+              <tr>
+                <td>Age:</td>
+                <td><input type="text" formControlName="age" #age></td>
+              </tr>
+              <tr>
+                <td>Birthdate:</td>
+                <td><input id="birthdate" type="text" formControlName="birthdate" #birthdate></td>
+              </tr>
+              <tr>
+                <td>Phone number:</td>
+                <td><input id="phone" type="text" formControlName="phone" #phone></td>
+              </tr>
+              <tr>
+                <td>Gender:</td>
+                <td>
+                  <div class="form-check" #gender>
+                    <input class="form-check-input" type="radio" formControlName="gender" id="male" value="male" checked>
+                    <label class="form-check-label" for="male">
+                      Male
+                    </label>
+                    <br>
+                    <input class="form-check-input" type="radio" formControlName="gender" id="female" value="female">
+                    <label class="form-check-label" for="female">
+                      Female
+                    </label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Type:</td>
+                <td>
+                  <div class="form-check" #type>
+                    <input class="form-check-input" type="radio" formControlName="type" id="private" value="private">
+                    <label class="form-check-label" for="private">
+                      Private
+                    </label>
+                    <br>
+                    <input class="form-check-input" type="radio" formControlName="type" id="business" value="business">
+                    <label class="form-check-label" for="business">
+                      Business
+                    </label>
+                  </div>
+                </td>
+              </tr>
+          </table>
+          <!-- Validation messages -->
+          <ng-container *ngIf="contactForm.get('name').hasError('required') && submitDone">
+            <p>Name is a required field!</p>
+          </ng-container>
+          <ng-container *ngIf="contactForm.get('surname').hasError('required') && submitDone">
+            <p>Surname is a required field!</p>
+          </ng-container>
+          <ng-container *ngIf="contactForm.get('birthdate').hasError('pattern') && submitDone">
+            <p>Birthday format should be dd/mm/yyyy!</p>
+          </ng-container>
+          <ng-container *ngIf="!this.contactAgeCheck() && submitDone">
+            <p>Entered age does not match the birthdate!</p>
+          </ng-container>
+          <ng-container *ngIf="contactForm.get('phone').hasError('pattern') && submitDone">
+            <p>Mobile phone should be in format 06xxxxxxxx</p>
+          </ng-container>
+          <!-- Buttons -->
+          <div class="buttons text-center">
+            <button class="btn btn-info mx-auto" type="submit" name="button" *ngIf="isDisabled">Confirm Add</button>
+            <button class="btn btn-info mx-auto" type="submit" name="button" *ngIf="!isDisabled">Confirm Edit</button>
+            <a class="btn btn-info ml-2" routerLink=''>Cancel</a>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

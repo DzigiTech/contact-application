@@ -1,0 +1,25 @@
+<!-- Navbar -->
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand mx-auto">
+    <div class="row">
+      <img src="https://vignette.wikia.nocookie.net/nation/images/6/61/Emblem_person_blue.png/revision/latest?cb=20120218131529" width="30" height="30" class="d-inline-block align-top" alt="">
+      <p class="ml-2">Contact application</p>
+    </div>
+  </a>
+</nav>
+<!-- Sidebar -->
+<div class="row">
+  <div class="col-sm-2 shadow p-3 bg-white rounded">
+    <div class="nav flex-column nav-pills ml-2" aria-orientation="vertical">
+      <a class="nav-link mt-3" routerLink="" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+true}">Home</a>
+      <a class="nav-link" routerLink="contacts" routerLinkActive="active-link">Contacts</a>
+      <a class="nav-link" routerLink="newcontact" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+true}">New contact</a>
+    </div>
+  </div>
+<!-- Content -->
+  <div class="col-10">
+    <router-outlet></router-outlet>
+  </div>
+</div>

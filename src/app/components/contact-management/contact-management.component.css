@@ -1,0 +1,10 @@
+.card {
+  max-width: 600px;
+}
+.card-title {
+  font-size: 22px;
+}
+td, label {
+  font-family: 'EB Garamond', serif;
+  font-size: 18px;
+}

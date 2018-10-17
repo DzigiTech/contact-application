@@ -1,0 +1,16 @@
+.card{
+  max-width: 600px;
+}
+img {
+  max-width: 200px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.card-title, .card-text {
+  font-family: 'Pacifico', cursive;
+}
+.card-title {
+  font-size: 30px;
+}
+.card-text {
+  font-size: 22px;
+}
